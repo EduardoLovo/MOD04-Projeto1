@@ -15,24 +15,41 @@ const prisma_service_1 = require("../prisma/prisma.service");
 let JogosService = class JogosService {
     constructor(prisma) {
         this.prisma = prisma;
+        this._include = {
+            generos: {
+                select: {
+                    nome: true
+                }
+            },
+            usuarios: {
+                select: {
+                    nome: true
+                }
+            }
+        };
     }
     create(data) {
         return this.prisma.jogo.create({
             data,
+            include: this._include,
         });
     }
     findAll() {
-        return this.prisma.jogo.findMany();
+        return this.prisma.jogo.findMany({
+            include: this._include,
+        });
     }
     findOne(id) {
         return this.prisma.jogo.findUnique({
             where: { id },
+            include: this._include,
         });
     }
     update(id, data) {
         return this.prisma.jogo.update({
             where: { id },
             data,
+            include: this._include,
         });
     }
     remove(id) {

@@ -4,9 +4,37 @@ import { UpdateJogoDto } from './dto/update-jogo.dto';
 export declare class JogosController {
     private readonly jogosService;
     constructor(jogosService: JogosService);
-    create(createJogoDto: CreateJogoDto): import(".prisma/client").Prisma.Prisma__JogoClient<import(".prisma/client").Jogo>;
-    findAll(): import(".prisma/client").PrismaPromise<import(".prisma/client").Jogo[]>;
-    findOne(id: string): import(".prisma/client").Prisma.Prisma__JogoClient<import(".prisma/client").Jogo>;
-    update(id: string, updateJogoDto: UpdateJogoDto): import(".prisma/client").Prisma.Prisma__JogoClient<import(".prisma/client").Jogo>;
+    create(createJogoDto: CreateJogoDto): import(".prisma/client").Prisma.Prisma__JogoClient<import(".prisma/client").Jogo & {
+        generos: {
+            nome: string;
+        }[];
+        usuarios: {
+            nome: string;
+        }[];
+    }>;
+    findAll(): import(".prisma/client").PrismaPromise<(import(".prisma/client").Jogo & {
+        generos: {
+            nome: string;
+        }[];
+        usuarios: {
+            nome: string;
+        }[];
+    })[]>;
+    findOne(id: string): import(".prisma/client").Prisma.Prisma__JogoClient<import(".prisma/client").Jogo & {
+        generos: {
+            nome: string;
+        }[];
+        usuarios: {
+            nome: string;
+        }[];
+    }>;
+    update(id: string, updateJogoDto: UpdateJogoDto): import(".prisma/client").Prisma.Prisma__JogoClient<import(".prisma/client").Jogo & {
+        generos: {
+            nome: string;
+        }[];
+        usuarios: {
+            nome: string;
+        }[];
+    }>;
     remove(id: string): import(".prisma/client").Prisma.Prisma__JogoClient<import(".prisma/client").Jogo>;
 }

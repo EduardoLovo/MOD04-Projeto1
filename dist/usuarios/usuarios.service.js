@@ -20,6 +20,11 @@ let UsuariosService = class UsuariosService {
                 select: {
                     titulo: true
                 }
+            },
+            jogos: {
+                select: {
+                    titulo: true
+                }
             }
         };
     }

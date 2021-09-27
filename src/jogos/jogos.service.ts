@@ -7,19 +7,39 @@ import { UpdateJogoDto } from './dto/update-jogo.dto';
 export class JogosService {
   constructor (private readonly prisma: PrismaService) {}
 
+  private readonly _include = {
+    generos: {
+      select: {
+        nome: true
+      }
+    },
+
+    usuarios: {
+      select: {
+        nome: true
+      }
+    }
+
+  }
+  
+
   create(data: CreateJogoDto) {
     return this.prisma.jogo.create({
       data,
+      include: this._include,
     });
   }
 
   findAll() {
-    return this.prisma.jogo.findMany();
+    return this.prisma.jogo.findMany({
+      include: this._include,
+    });
   }
 
   findOne(id: number) {
     return this.prisma.jogo.findUnique({
       where: {id},
+      include: this._include,
     });
   }
 
@@ -27,6 +47,7 @@ export class JogosService {
     return this.prisma.jogo.update({
       where: {id},
       data,
+      include: this._include,
     });
   }
 

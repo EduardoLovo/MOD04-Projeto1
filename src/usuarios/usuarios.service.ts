@@ -12,6 +12,12 @@ export class UsuariosService {
       select: {
         titulo: true
       }
+    },
+
+    jogos: {
+      select: {
+        titulo: true
+      }
     }
   };
 

@@ -9,9 +9,15 @@ export declare class UsuariosService {
         perfis: {
             titulo: string;
         }[];
+        jogos: {
+            titulo: string;
+        }[];
     }>;
     findAll(): import(".prisma/client").PrismaPromise<(import(".prisma/client").Usuario & {
         perfis: {
+            titulo: string;
+        }[];
+        jogos: {
             titulo: string;
         }[];
     })[]>;
@@ -19,9 +25,15 @@ export declare class UsuariosService {
         perfis: {
             titulo: string;
         }[];
+        jogos: {
+            titulo: string;
+        }[];
     }>;
     update(id: number, data: UpdateUsuarioDto): import(".prisma/client").Prisma.Prisma__UsuarioClient<import(".prisma/client").Usuario & {
         perfis: {
+            titulo: string;
+        }[];
+        jogos: {
             titulo: string;
         }[];
     }>;

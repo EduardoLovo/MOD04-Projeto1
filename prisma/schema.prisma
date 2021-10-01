@@ -12,14 +12,14 @@ generator client {
 
 model Usuario {
   id          Int     @id @default(autoincrement())
-  nome       String
+  nome        String
   sobrenome   String
   email       String  @unique
   senha       String
-  cpf         String @unique
+  cpf         String  @unique
 
   perfis      Perfil[]
-  jogos       Jogo[]  @relation("_MyRelationTable")
+  
   
   
 }
@@ -32,6 +32,10 @@ model Perfil {
   
   titulo      String
   imagem      String
+
+  jogos       PerfisOnJogos[]
+
+  
 }
 
 model Jogo {
@@ -44,17 +48,39 @@ model Jogo {
   trailer         String
   gameplay        String
 
-  generos         Genero[]
-  usuarios        Usuario[] @relation("_MyRelationTable")
+  generos         JogosOnGeneros[]
+
+  perfis          PerfisOnJogos[]
+  
 
 }
 
 model Genero {
   id   Int @id @default(autoincrement())
 
-  jogo     Jogo @relation(fields: [jogoId], references: [id])
-  jogoId   Int
+  jogos        JogosOnGeneros[] 
 
   nome String
 }
 
+model JogosOnGeneros {
+  jogo        Jogo      @relation(fields: [jogoId], references: [id])
+  jogoId      Int
+  generos     Genero    @relation(fields: [generoId], references: [id])
+  generoId    Int
+  assignedAt  DateTime  @default(now())
+  assignedBy  String
+
+  @@id([jogoId, generoId])
+}
+
+model PerfisOnJogos {p
+  perfil      Perfil    @relation(fields: [perfilId], references: [id])
+  perfilId    Int
+  jogo        Jogo      @relation(fields: [jogoId], references: [id])
+  jogoId      Int
+  assignedAt  DateTime  @default(now())
+  assignedBy  String
+
+  @@id([perfilId, jogoId])
+}

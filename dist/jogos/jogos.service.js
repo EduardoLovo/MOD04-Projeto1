@@ -31,25 +31,20 @@ let JogosService = class JogosService {
     create(data) {
         return this.prisma.jogo.create({
             data,
-            include: this._include,
         });
     }
     findAll() {
-        return this.prisma.jogo.findMany({
-            include: this._include,
-        });
+        return this.prisma.jogo.findMany({});
     }
     findOne(id) {
         return this.prisma.jogo.findUnique({
             where: { id },
-            include: this._include,
         });
     }
     update(id, data) {
         return this.prisma.jogo.update({
             where: { id },
             data,
-            include: this._include,
         });
     }
     remove(id) {

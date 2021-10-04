@@ -8,5 +8,4 @@ export declare class Jogo implements Prisma.JogoUncheckedCreateInput {
     nota: number;
     trailer: string;
     gameplay: string;
-    generos?: Prisma.GeneroUncheckedCreateNestedManyWithoutJogoInput;
 }

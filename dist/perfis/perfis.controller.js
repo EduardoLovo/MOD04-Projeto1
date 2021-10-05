@@ -11,19 +11,18 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var __param = (this && this.__param) || function (paramIndex, decorator) {
     return function (target, key) { decorator(target, key, paramIndex); }
 };
-var _a;
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.PerfisController = void 0;
 const common_1 = require("@nestjs/common");
 const perfis_service_1 = require("./perfis.service");
-const create_perfi_dto_1 = require("./dto/create-perfi.dto");
-const update_perfi_dto_1 = require("./dto/update-perfi.dto");
+const create_perfil_dto_1 = require("./dto/create-perfil.dto");
+const update_perfil_dto_1 = require("./dto/update-perfil.dto");
 let PerfisController = class PerfisController {
     constructor(perfisService) {
         this.perfisService = perfisService;
     }
-    create(createPerfiDto) {
-        return this.perfisService.create(createPerfiDto);
+    create(createPerfilDto) {
+        return this.perfisService.create(createPerfilDto);
     }
     findAll() {
         return this.perfisService.findAll();
@@ -31,8 +30,8 @@ let PerfisController = class PerfisController {
     findOne(id) {
         return this.perfisService.findOne(+id);
     }
-    update(id, updatePerfiDto) {
-        return this.perfisService.update(+id, updatePerfiDto);
+    update(id, updatePerfilDto) {
+        return this.perfisService.update(+id, updatePerfilDto);
     }
     remove(id) {
         return this.perfisService.remove(+id);
@@ -42,7 +41,7 @@ __decorate([
     (0, common_1.Post)(),
     __param(0, (0, common_1.Body)()),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [typeof (_a = typeof create_perfi_dto_1.CreatePerfiDto !== "undefined" && create_perfi_dto_1.CreatePerfiDto) === "function" ? _a : Object]),
+    __metadata("design:paramtypes", [create_perfil_dto_1.CreatePerfilDto]),
     __metadata("design:returntype", void 0)
 ], PerfisController.prototype, "create", null);
 __decorate([
@@ -63,7 +62,7 @@ __decorate([
     __param(0, (0, common_1.Param)('id')),
     __param(1, (0, common_1.Body)()),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [String, update_perfi_dto_1.UpdatePerfiDto]),
+    __metadata("design:paramtypes", [String, update_perfil_dto_1.UpdatePerfilDto]),
     __metadata("design:returntype", void 0)
 ], PerfisController.prototype, "update", null);
 __decorate([

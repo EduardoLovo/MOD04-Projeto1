@@ -21,11 +21,6 @@ let UsuariosService = class UsuariosService {
                     titulo: true
                 }
             },
-            jogos: {
-                select: {
-                    titulo: true
-                }
-            }
         };
     }
     create(data) {

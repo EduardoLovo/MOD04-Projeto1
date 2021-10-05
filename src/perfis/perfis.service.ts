@@ -1,13 +1,13 @@
 import { Injectable } from '@nestjs/common';
 import { PrismaService } from 'src/prisma/prisma.service';
-import { CreatePerfiDto } from './dto/create-perfi.dto';
-import { UpdatePerfiDto } from './dto/update-perfi.dto';
+import { CreatePerfilDto } from './dto/create-perfil.dto';
+import { UpdatePerfilDto } from './dto/update-perfil.dto';
 
 @Injectable()
 export class PerfisService {
   constructor (private readonly prisma: PrismaService) {}
   
-  create(data: CreatePerfiDto) {
+  create(data: CreatePerfilDto) {
     return this.prisma.perfil.create({
       data,
     });
@@ -23,7 +23,7 @@ export class PerfisService {
     });
   }
 
-  update(id: number, data: UpdatePerfiDto) {
+  update(id: number, data: UpdatePerfilDto) {
     return this.prisma.perfil.update({
       where: {id},
       data,

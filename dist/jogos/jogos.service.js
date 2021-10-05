@@ -31,6 +31,7 @@ let JogosService = class JogosService {
     create(data) {
         return this.prisma.jogo.create({
             data,
+            include: this._include
         });
     }
     ;

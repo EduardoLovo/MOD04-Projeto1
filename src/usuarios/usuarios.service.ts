@@ -13,13 +13,7 @@ export class UsuariosService {
         titulo: true
       }
     },
-
-    jogos: {
-      select: {
-        titulo: true
-      }
-    }
-  };
+  }
 
   create(data: CreateUsuarioDto) {
     return this.prisma.usuario.create({

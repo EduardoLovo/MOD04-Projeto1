@@ -1,15 +1,15 @@
 import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
 import { PerfisService } from './perfis.service';
-import { CreatePerfiDto } from './dto/create-perfi.dto';
-import { UpdatePerfiDto } from './dto/update-perfi.dto';
+import { CreatePerfilDto } from './dto/create-perfil.dto';
+import { UpdatePerfilDto } from './dto/update-perfil.dto';
 
 @Controller('perfis')
 export class PerfisController {
   constructor(private readonly perfisService: PerfisService) {}
 
   @Post()
-  create(@Body() createPerfiDto: CreatePerfiDto) {
-    return this.perfisService.create(createPerfiDto);
+  create(@Body() createPerfilDto: CreatePerfilDto) {
+    return this.perfisService.create(createPerfilDto);
   }
 
   @Get()
@@ -23,8 +23,8 @@ export class PerfisController {
   }
 
   @Patch(':id')
-  update(@Param('id') id: string, @Body() updatePerfiDto: UpdatePerfiDto) {
-    return this.perfisService.update(+id, updatePerfiDto);
+  update(@Param('id') id: string, @Body() updatePerfilDto: UpdatePerfilDto) {
+    return this.perfisService.update(+id, updatePerfilDto);
   }
 
   @Delete(':id')

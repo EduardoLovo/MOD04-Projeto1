@@ -8,25 +8,21 @@ export declare class UsuariosController {
         perfis: {
             titulo: string;
         }[];
-        jogos: never;
     }>;
     findAll(): import(".prisma/client").PrismaPromise<(import(".prisma/client").Usuario & {
         perfis: {
             titulo: string;
         }[];
-        jogos: never;
     })[]>;
     findOne(id: string): import(".prisma/client").Prisma.Prisma__UsuarioClient<import(".prisma/client").Usuario & {
         perfis: {
             titulo: string;
         }[];
-        jogos: never;
     }>;
     update(id: string, updateUsuarioDto: UpdateUsuarioDto): import(".prisma/client").Prisma.Prisma__UsuarioClient<import(".prisma/client").Usuario & {
         perfis: {
             titulo: string;
         }[];
-        jogos: never;
     }>;
     remove(id: string): import(".prisma/client").Prisma.Prisma__UsuarioClient<import(".prisma/client").Usuario>;
 }

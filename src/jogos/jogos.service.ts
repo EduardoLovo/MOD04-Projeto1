@@ -27,7 +27,7 @@ export class JogosService {
   create(data: CreateJogoDto) {
     return this.prisma.jogo.create({
       data,
-      // include: this._include
+      include: this._include
     });
   };
 

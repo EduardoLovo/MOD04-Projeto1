@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Perfi = void 0;
-class Perfi {
+exports.Perfil = void 0;
+class Perfil {
 }
-exports.Perfi = Perfi;
+exports.Perfil = Perfil;
 //# sourceMappingURL=perfi.entity.js.map

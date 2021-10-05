@@ -1,6 +1,6 @@
 import { Prisma } from "@prisma/client";
 
-export class Perfi implements Prisma.PerfilUncheckedCreateInput {
+export class Perfil implements Prisma.PerfilUncheckedCreateInput {
     id?: number;
     usuarioId: number;
     titulo: string;

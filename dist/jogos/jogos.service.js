@@ -19,13 +19,13 @@ let JogosService = class JogosService {
             generos: {
                 select: {
                     nome: true
-                }
+                },
             },
-            usuarios: {
+            perfis: {
                 select: {
-                    nome: true
-                }
-            }
+                    titulo: true,
+                },
+            },
         };
     }
     create(data) {
@@ -33,6 +33,7 @@ let JogosService = class JogosService {
             data,
         });
     }
+    ;
     findAll() {
         return this.prisma.jogo.findMany({});
     }

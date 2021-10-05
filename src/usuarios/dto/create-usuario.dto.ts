@@ -1,5 +1,5 @@
 import { Prisma } from "@prisma/client";
-import { IsInt, IsNotEmpty, IsOptional, IsString } from "class-validator";
+import { IsNotEmpty, IsOptional, IsString } from "class-validator";
 import { Usuario } from "../entities/usuario.entity";
 
 

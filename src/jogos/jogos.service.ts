@@ -1,3 +1,4 @@
+import { Prisma } from '.prisma/client';
 import { Injectable } from '@nestjs/common';
 import { PrismaService } from 'src/prisma/prisma.service';
 import { CreateJogoDto } from './dto/create-jogo.dto';
@@ -11,24 +12,24 @@ export class JogosService {
     generos: {
       select: {
         nome: true
-      }
+      },
     },
 
-    usuarios: {
+    perfis: {
       select: {
-        nome: true
-      }
-    }
-
-  }
+        titulo: true,
+        
+      },
+    },
+  };
   
 
   create(data: CreateJogoDto) {
     return this.prisma.jogo.create({
       data,
-      // include: this._include,
+      // include: this._include
     });
-  }
+  };
 
   findAll() {
     return this.prisma.jogo.findMany({

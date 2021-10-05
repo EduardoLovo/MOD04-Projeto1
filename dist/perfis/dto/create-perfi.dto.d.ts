@@ -1,5 +1,5 @@
-import { Perfi } from "../entities/perfi.entity";
-export declare class CreatePerfiDto extends Perfi {
+import { Perfil } from "../entities/perfi.entity";
+export declare class CreatePerfilDto extends Perfil {
     titulo: string;
     imagem: string;
 }

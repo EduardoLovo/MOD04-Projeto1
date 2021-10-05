@@ -25,13 +25,13 @@ export class UsuariosService {
     return this.prisma.usuario.create({
       data,
       include: this._include,
-    })
+    });
   }
 
   findAll() {
     return this.prisma.usuario.findMany({
       include: this._include,
-    })
+    });
   };
   
 

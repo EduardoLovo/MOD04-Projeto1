@@ -1,6 +1,7 @@
-import { Prisma } from ".prisma/client";
+import { Genero } from "src/generos/entities/genero.entity";
+import { Perfil } from "src/perfis/entities/perfi.entity";
 
-export class Jogo implements Prisma.JogoUncheckedCreateInput{
+export class Jogo {
     id?: number;
     titulo: string;
     capa: string;
@@ -9,5 +10,6 @@ export class Jogo implements Prisma.JogoUncheckedCreateInput{
     nota: number;
     trailer: string;
     gameplay: string;
-    // generos?: Prisma.GeneroUncheckedCreateNestedManyWithoutJogoInput;
+    generos?: Genero[];
+    perfis?: Perfil[];
 }

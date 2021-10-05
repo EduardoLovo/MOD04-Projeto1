@@ -9,20 +9,20 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CreatePerfiDto = void 0;
+exports.CreatePerfilDto = void 0;
 const class_validator_1 = require("class-validator");
 const perfi_entity_1 = require("../entities/perfi.entity");
-class CreatePerfiDto extends perfi_entity_1.Perfi {
+class CreatePerfilDto extends perfi_entity_1.Perfil {
 }
 __decorate([
     (0, class_validator_1.IsString)(),
     (0, class_validator_1.IsNotEmpty)(),
     __metadata("design:type", String)
-], CreatePerfiDto.prototype, "titulo", void 0);
+], CreatePerfilDto.prototype, "titulo", void 0);
 __decorate([
     (0, class_validator_1.IsString)(),
     (0, class_validator_1.IsNotEmpty)(),
     __metadata("design:type", String)
-], CreatePerfiDto.prototype, "imagem", void 0);
-exports.CreatePerfiDto = CreatePerfiDto;
+], CreatePerfilDto.prototype, "imagem", void 0);
+exports.CreatePerfilDto = CreatePerfilDto;
 //# sourceMappingURL=create-perfi.dto.js.map

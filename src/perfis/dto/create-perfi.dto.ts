@@ -1,7 +1,7 @@
 import { IsInt, IsNotEmpty, IsOptional, IsString } from "class-validator";
-import { Perfi } from "../entities/perfi.entity";
+import { Perfil } from "../entities/perfi.entity";
 
-export class CreatePerfiDto extends Perfi{
+export class CreatePerfilDto extends Perfil{
     @IsString()
     @IsNotEmpty()
     titulo: string;

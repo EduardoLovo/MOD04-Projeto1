@@ -1,5 +1,6 @@
 import { Prisma } from "@prisma/client";
 import { IsNotEmpty, IsOptional, IsString } from "class-validator";
+import { CreatePerfilDto } from "src/perfis/dto/create-perfil.dto";
 import { Usuario } from "../entities/usuario.entity";
 
 
@@ -25,7 +26,7 @@ export class CreateUsuarioDto extends Usuario {
     cpf: string;
 
     @IsOptional()
-    perfil?: Prisma.PerfilUncheckedCreateNestedManyWithoutUsuarioInput
+    perfil?: CreatePerfilDto[];
 }
 
 

@@ -18,7 +18,7 @@ let JogosService = class JogosService {
         this._include = {
             generos: {
                 select: {
-                    nome: true
+                    nome: true,
                 },
             },
             perfis: {

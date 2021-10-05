@@ -1,4 +1,6 @@
-import { IsNotEmpty, IsString } from "class-validator";
+import { IsNotEmpty, IsOptional, IsString } from "class-validator";
+import { CreateJogoDto } from "src/jogos/dto/create-jogo.dto";
+import { CreateUsuarioDto } from "src/usuarios/dto/create-usuario.dto";
 import { Perfil } from "../entities/perfi.entity";
 
 export class CreatePerfilDto extends Perfil{
@@ -9,4 +11,12 @@ export class CreatePerfilDto extends Perfil{
     @IsString()
     @IsNotEmpty()
     imagem: string;
+
+    @IsOptional()
+    usuarios?: CreateUsuarioDto[];
+
+    @IsOptional()
+    jogos?: CreateJogoDto[];
+
+    
 }

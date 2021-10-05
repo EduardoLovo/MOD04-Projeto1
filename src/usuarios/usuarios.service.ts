@@ -11,7 +11,7 @@ export class UsuariosService {
     perfis: {
       select: {
         titulo: true
-      }
+      },
     },
   }
 
@@ -26,7 +26,7 @@ export class UsuariosService {
     return this.prisma.usuario.findMany({
       include: this._include,
     });
-  };
+  }
   
 
   findOne(id: number) {

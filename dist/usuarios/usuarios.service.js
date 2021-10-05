@@ -19,7 +19,7 @@ let UsuariosService = class UsuariosService {
             perfis: {
                 select: {
                     titulo: true
-                }
+                },
             },
         };
     }
@@ -34,7 +34,6 @@ let UsuariosService = class UsuariosService {
             include: this._include,
         });
     }
-    ;
     findOne(id) {
         return this.prisma.usuario.findUnique({
             where: { id },

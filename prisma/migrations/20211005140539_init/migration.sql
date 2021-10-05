@@ -15,9 +15,9 @@ CREATE TABLE `Usuario` (
 -- CreateTable
 CREATE TABLE `Perfil` (
     `id` INTEGER NOT NULL AUTO_INCREMENT,
-    `usuarioId` INTEGER NOT NULL,
     `titulo` VARCHAR(191) NOT NULL,
     `imagem` VARCHAR(191) NOT NULL,
+    `usuarioId` INTEGER NOT NULL,
 
     PRIMARY KEY (`id`)
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
@@ -48,8 +48,6 @@ CREATE TABLE `Genero` (
 CREATE TABLE `JogosOnGeneros` (
     `jogoId` INTEGER NOT NULL,
     `generoId` INTEGER NOT NULL,
-    `assignedAt` DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
-    `assignedBy` VARCHAR(191) NOT NULL,
 
     PRIMARY KEY (`jogoId`, `generoId`)
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
@@ -58,8 +56,6 @@ CREATE TABLE `JogosOnGeneros` (
 CREATE TABLE `PerfisOnJogos` (
     `perfilId` INTEGER NOT NULL,
     `jogoId` INTEGER NOT NULL,
-    `assignedAt` DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
-    `assignedBy` VARCHAR(191) NOT NULL,
 
     PRIMARY KEY (`perfilId`, `jogoId`)
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;

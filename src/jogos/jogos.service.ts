@@ -11,7 +11,7 @@ export class JogosService {
   private readonly _include = {
     generos: {
       select: {
-        nome: true
+        nome: true,
       },
     },
 

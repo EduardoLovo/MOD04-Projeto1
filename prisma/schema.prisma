@@ -26,12 +26,11 @@ model Usuario {
 
 model Perfil {
   id          Int @id @default(autoincrement())
+  titulo      String
+  imagem      String
 
   usuario     Usuario @relation(fields: [usuarioId], references: [id])
   usuarioId   Int
-  
-  titulo      String
-  imagem      String
 
   jogos       PerfisOnJogos[]
 
@@ -57,10 +56,11 @@ model Jogo {
 
 model Genero {
   id   Int @id @default(autoincrement())
+  nome String
 
   jogos        JogosOnGeneros[] 
 
-  nome String
+  
 }
 
 model JogosOnGeneros {
@@ -68,8 +68,6 @@ model JogosOnGeneros {
   jogoId      Int
   generos     Genero    @relation(fields: [generoId], references: [id])
   generoId    Int
-  assignedAt  DateTime  @default(now())
-  assignedBy  String
 
   @@id([jogoId, generoId])
 }
@@ -79,8 +77,6 @@ model PerfisOnJogos {p
   perfilId    Int
   jogos       Jogo      @relation(fields: [jogoId], references: [id])
   jogoId      Int
-  assignedAt  DateTime  @default(now())
-  assignedBy  String
 
   @@id([perfilId, jogoId])
 }

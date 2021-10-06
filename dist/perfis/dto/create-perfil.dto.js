@@ -28,11 +28,8 @@ __decorate([
 ], CreatePerfilDto.prototype, "imagem", void 0);
 __decorate([
     (0, class_validator_1.IsOptional)(),
+    (0, class_validator_1.IsNumber)(),
     __metadata("design:type", Array)
 ], CreatePerfilDto.prototype, "usuarios", void 0);
-__decorate([
-    (0, class_validator_1.IsOptional)(),
-    __metadata("design:type", Array)
-], CreatePerfilDto.prototype, "jogos", void 0);
 exports.CreatePerfilDto = CreatePerfilDto;
 //# sourceMappingURL=create-perfil.dto.js.map

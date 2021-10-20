@@ -40,7 +40,6 @@ let JogosController = class JogosController {
     }
 };
 __decorate([
-    (0, public_decorator_1.Public)(),
     (0, common_1.Post)(),
     __param(0, (0, common_1.Body)()),
     __metadata("design:type", Function),

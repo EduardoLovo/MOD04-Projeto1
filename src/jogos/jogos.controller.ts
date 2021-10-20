@@ -8,7 +8,7 @@ import { Public } from 'src/auth/public.decorator';
 export class JogosController {
   constructor(private readonly jogosService: JogosService) {}
 
-  @Public()
+  // @Public()
   @Post()
   create(@Body() createJogoDto: CreateJogoDto) {
     return this.jogosService.create(createJogoDto);

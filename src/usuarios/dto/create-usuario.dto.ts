@@ -1,5 +1,4 @@
-import { Prisma } from "@prisma/client";
-import { IsNotEmpty, IsOptional, IsString } from "class-validator";
+import { ArrayNotEmpty, IsArray, IsEmail, IsInt, IsNotEmpty, IsOptional, IsString } from "class-validator";
 import { CreatePerfilDto } from "src/perfis/dto/create-perfil.dto";
 import { Usuario } from "../entities/usuario.entity";
 
@@ -13,7 +12,7 @@ export class CreateUsuarioDto extends Usuario {
     @IsNotEmpty()
     sobrenome: string;
 
-    @IsString()
+    @IsEmail()
     @IsNotEmpty()
     email: string;
 
@@ -26,7 +25,10 @@ export class CreateUsuarioDto extends Usuario {
     cpf: string;
 
     @IsOptional()
-    perfil?: CreatePerfilDto[];
+    @IsInt({ each: true })
+    @IsArray()
+    @ArrayNotEmpty()
+    perfisIds?: number[];
 }
 
 

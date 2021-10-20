@@ -28,27 +28,42 @@ let JogosService = class JogosService {
             },
         };
     }
-    create(data) {
+    create(dto) {
+        const generosIds = dto.generosIds;
+        delete dto.generosIds;
+        const data = Object.assign(Object.assign({}, dto), { generos: {
+                connect: generosIds.map((generoId) => ({ id: generoId })),
+            } });
         return this.prisma.jogo.create({
             data,
+            include: this._include,
         });
     }
     ;
     findAll() {
-        return this.prisma.jogo.findMany({});
+        return this.prisma.jogo.findMany({
+            include: this._include,
+        });
     }
     findOne(id) {
         return this.prisma.jogo.findUnique({
             where: { id },
         });
     }
-    update(id, data) {
+    update(id, dto) {
+        const generosIds = dto.generosIds;
+        delete dto.generosIds;
+        const data = Object.assign(Object.assign({}, dto), { generos: {
+                connect: generosIds === null || generosIds === void 0 ? void 0 : generosIds.map((generoId) => ({ id: generoId })),
+            } });
         return this.prisma.jogo.update({
             where: { id },
             data,
+            include: this._include,
         });
     }
     remove(id) {
+        console.log('deletado');
         return this.prisma.jogo.delete({
             where: { id },
         });

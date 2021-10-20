@@ -2,11 +2,13 @@ import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/commo
 import { GenerosService } from './generos.service';
 import { CreateGeneroDto } from './dto/create-genero.dto';
 import { UpdateGeneroDto } from './dto/update-genero.dto';
+import { Public } from 'src/auth/public.decorator';
 
 @Controller('generos')
 export class GenerosController {
   constructor(private readonly generosService: GenerosService) {}
 
+  @Public()
   @Post()
   create(@Body() createGeneroDto: CreateGeneroDto) {
     return this.generosService.create(createGeneroDto);

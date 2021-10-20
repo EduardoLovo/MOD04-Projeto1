@@ -17,6 +17,7 @@ const common_1 = require("@nestjs/common");
 const generos_service_1 = require("./generos.service");
 const create_genero_dto_1 = require("./dto/create-genero.dto");
 const update_genero_dto_1 = require("./dto/update-genero.dto");
+const public_decorator_1 = require("../auth/public.decorator");
 let GenerosController = class GenerosController {
     constructor(generosService) {
         this.generosService = generosService;
@@ -38,6 +39,7 @@ let GenerosController = class GenerosController {
     }
 };
 __decorate([
+    (0, public_decorator_1.Public)(),
     (0, common_1.Post)(),
     __param(0, (0, common_1.Body)()),
     __metadata("design:type", Function),

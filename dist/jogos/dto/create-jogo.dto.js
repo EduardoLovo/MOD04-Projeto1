@@ -49,5 +49,11 @@ __decorate([
     (0, class_validator_1.IsNotEmpty)(),
     __metadata("design:type", String)
 ], CreateJogoDto.prototype, "gameplay", void 0);
+__decorate([
+    (0, class_validator_1.IsInt)({ each: true }),
+    (0, class_validator_1.IsArray)(),
+    (0, class_validator_1.ArrayNotEmpty)(),
+    __metadata("design:type", Array)
+], CreateJogoDto.prototype, "generosIds", void 0);
 exports.CreateJogoDto = CreateJogoDto;
 //# sourceMappingURL=create-jogo.dto.js.map

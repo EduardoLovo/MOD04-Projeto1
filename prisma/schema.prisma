@@ -32,7 +32,7 @@ model Perfil {
   usuario     Usuario @relation(fields: [usuarioId], references: [id])
   usuarioId   Int
 
-  jogos       PerfisOnJogos[]
+  jogos       Jogo[]
 
   
 }
@@ -47,36 +47,15 @@ model Jogo {
   trailer         String
   gameplay        String
 
-  generos         JogosOnGeneros[]
+  generos         Genero[]
 
-  perfis          PerfisOnJogos[]
-  
-
+  perfis          Perfil[]
 }
 
 model Genero {
   id   Int @id @default(autoincrement())
   nome String
 
-  jogos        JogosOnGeneros[] 
-
-  
+  jogos        Jogo[] 
 }
 
-model JogosOnGeneros {
-  jogos       Jogo      @relation(fields: [jogoId], references: [id])
-  jogoId      Int
-  generos     Genero    @relation(fields: [generoId], references: [id])
-  generoId    Int
-
-  @@id([jogoId, generoId])
-}
-
-model PerfisOnJogos {p
-  perfis      Perfil    @relation(fields: [perfilId], references: [id])
-  perfilId    Int
-  jogos       Jogo      @relation(fields: [jogoId], references: [id])
-  jogoId      Int
-
-  @@id([perfilId, jogoId])
-}

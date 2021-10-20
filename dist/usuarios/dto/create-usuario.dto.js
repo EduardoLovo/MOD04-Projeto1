@@ -26,7 +26,7 @@ __decorate([
     __metadata("design:type", String)
 ], CreateUsuarioDto.prototype, "sobrenome", void 0);
 __decorate([
-    (0, class_validator_1.IsString)(),
+    (0, class_validator_1.IsEmail)(),
     (0, class_validator_1.IsNotEmpty)(),
     __metadata("design:type", String)
 ], CreateUsuarioDto.prototype, "email", void 0);
@@ -42,7 +42,10 @@ __decorate([
 ], CreateUsuarioDto.prototype, "cpf", void 0);
 __decorate([
     (0, class_validator_1.IsOptional)(),
+    (0, class_validator_1.IsInt)({ each: true }),
+    (0, class_validator_1.IsArray)(),
+    (0, class_validator_1.ArrayNotEmpty)(),
     __metadata("design:type", Array)
-], CreateUsuarioDto.prototype, "perfil", void 0);
+], CreateUsuarioDto.prototype, "perfisIds", void 0);
 exports.CreateUsuarioDto = CreateUsuarioDto;
 //# sourceMappingURL=create-usuario.dto.js.map

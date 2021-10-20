@@ -7,4 +7,5 @@ export declare class CreateJogoDto extends Jogo {
     nota: number;
     trailer: string;
     gameplay: string;
+    generosIds?: number[];
 }

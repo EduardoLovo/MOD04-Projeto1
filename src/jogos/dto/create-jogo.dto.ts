@@ -1,8 +1,9 @@
 // import { Prisma } from "@prisma/client";
-import { IsInt, IsNotEmpty, IsString } from "class-validator";
+import { ArrayNotEmpty, IsArray, IsInt, IsNotEmpty, IsOptional, IsString } from "class-validator";
 // import { CreateGeneroDto } from "src/generos/dto/create-genero.dto";
 // import { CreatePerfilDto } from "src/perfis/dto/create-perfi.dto";
 import { Jogo } from "../entities/jogo.entity";
+
 
 export class CreateJogoDto extends Jogo{
     @IsString()
@@ -23,6 +24,7 @@ export class CreateJogoDto extends Jogo{
 
     @IsInt()
     @IsNotEmpty()
+    
     nota: number;
 
     @IsString()
@@ -33,9 +35,14 @@ export class CreateJogoDto extends Jogo{
     @IsNotEmpty()
     gameplay: string;
 
-    // @IsOptional()
-    // generos: CreateGeneroDto;
+    @IsInt({ each: true })
+    @IsArray()
+    @ArrayNotEmpty()
+    generosIds?: number[];
 
+    // @IsInt({ each: true })
+    // @IsArray()
+    // // @ArrayNotEmpty()
     // @IsOptional()
-    // perfis: CreatePerfilDto;
+    // perfisIds?: number[];
 }

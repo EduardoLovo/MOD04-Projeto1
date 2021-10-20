@@ -1,5 +1,4 @@
 import { IsNotEmpty, IsNumber, IsOptional, IsString } from "class-validator";
-import { CreateJogoDto } from "src/jogos/dto/create-jogo.dto";
 import { CreateUsuarioDto } from "src/usuarios/dto/create-usuario.dto";
 import { Perfil } from "../entities/perfi.entity";
 

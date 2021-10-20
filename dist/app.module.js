@@ -15,13 +15,21 @@ const perfis_module_1 = require("./perfis/perfis.module");
 const jogos_module_1 = require("./jogos/jogos.module");
 const generos_module_1 = require("./generos/generos.module");
 const prisma_service_1 = require("./prisma/prisma.service");
+const auth_module_1 = require("./auth/auth.module");
+const core_1 = require("@nestjs/core");
+const jwt_auth_guard_1 = require("./auth/jwt-auth.guard");
 let AppModule = class AppModule {
 };
 AppModule = __decorate([
     (0, common_1.Module)({
-        imports: [usuarios_module_1.UsuariosModule, perfis_module_1.PerfisModule, jogos_module_1.JogosModule, generos_module_1.GenerosModule],
+        imports: [usuarios_module_1.UsuariosModule, perfis_module_1.PerfisModule, jogos_module_1.JogosModule, generos_module_1.GenerosModule, auth_module_1.AuthModule],
         controllers: [app_controller_1.AppController],
-        providers: [app_service_1.AppService, prisma_service_1.PrismaService],
+        providers: [app_service_1.AppService, prisma_service_1.PrismaService, usuarios_module_1.UsuariosModule,
+            {
+                provide: core_1.APP_GUARD,
+                useClass: jwt_auth_guard_1.JwtAuthGuard,
+            },
+        ],
     })
 ], AppModule);
 exports.AppModule = AppModule;

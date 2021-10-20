@@ -17,6 +17,7 @@ const common_1 = require("@nestjs/common");
 const usuarios_service_1 = require("./usuarios.service");
 const create_usuario_dto_1 = require("./dto/create-usuario.dto");
 const update_usuario_dto_1 = require("./dto/update-usuario.dto");
+const public_decorator_1 = require("../auth/public.decorator");
 let UsuariosController = class UsuariosController {
     constructor(usuariosService) {
         this.usuariosService = usuariosService;
@@ -28,7 +29,7 @@ let UsuariosController = class UsuariosController {
         return this.usuariosService.findAll();
     }
     findOne(id) {
-        return this.usuariosService.findOne(+id);
+        return this.usuariosService.findById(+id);
     }
     update(id, updateUsuarioDto) {
         return this.usuariosService.update(+id, updateUsuarioDto);
@@ -38,6 +39,7 @@ let UsuariosController = class UsuariosController {
     }
 };
 __decorate([
+    (0, public_decorator_1.Public)(),
     (0, common_1.Post)(),
     __param(0, (0, common_1.Body)()),
     __metadata("design:type", Function),

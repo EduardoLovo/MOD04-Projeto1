@@ -1,7 +1,6 @@
 import { Genero } from "src/generos/entities/genero.entity";
-import { Perfil } from "src/perfis/entities/perfi.entity";
 export declare class Jogo {
-    id?: number;
+    id: number;
     titulo: string;
     capa: string;
     descricao: string;
@@ -10,5 +9,4 @@ export declare class Jogo {
     trailer: string;
     gameplay: string;
     generos?: Genero[];
-    perfis?: Perfil[];
 }

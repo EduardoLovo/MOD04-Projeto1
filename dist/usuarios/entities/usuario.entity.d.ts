@@ -1,6 +1,6 @@
 import { Perfil } from "src/perfis/entities/perfi.entity";
 export declare class Usuario {
-    id: number;
+    id?: number;
     nome: string;
     sobrenome: string;
     email: string;
